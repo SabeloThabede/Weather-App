@@ -1,379 +1,311 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="25dp"
-    android:background="@drawable/gradient_bg"
-    tools:context=".MainActivity">
+    android:background="#282828"
+    android:padding="15dp">
 
-    <RelativeLayout
-        android:id="@+id/mainContainer"
-        android:visibility="visible"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="44dp"
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:gravity="center"
-            android:id="@+id/addressContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:src="@drawable/pinggo"
+        app:layout_constraintBottom_toBottomOf="@+id/subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:textColor="@color/white"
-                android:id="@+id/address"
-                android:textSize="24sp"
-                android:text="Location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </TextView>
-            <TextView
-                android:textColor="@color/white"
-                android:id="@+id/updated_at"
-                android:textSize="14sp"
-                android:text="Updated at"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/tomorrowBadge"
+        android:layout_width="77dp"
+        android:layout_height="32dp"
+        android:backgroundTint="#4BAF5A"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        android:text="Tomorrow"
+        android:textColor="#FFF"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            </TextView>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/overviewContainer"
-            android:orientation="vertical"
-            android:layout_centerInParent="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/Status"
-                android:textSize="18sp"
-                android:text="Clear Sky"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </TextView>
-            <TextView
-                android:textColor="@color/white"
-                android:id="@+id/temp"
-                android:textSize="70sp"
-                android:fontFamily="sans-serif-thin"
-                android:layout_gravity="center"
-                android:text="24°C"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </TextView>
-            <LinearLayout
-               android:orientation="horizontal"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/temp_min"
-                    android:text="Min temp"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </TextView>
-                <Space
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content">
-                </Space>
-
-                <TextView
-                    android:id="@+id/temp_max"
-                    android:text="Max Temp"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                </TextView>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/detailsContainer"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true" />
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:weightSum="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:background="#3CF1EBF1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/img_3">
-<!--                            android:tint="#FFF">-->
-
-                        </ImageView>
-                        <Space
-                            android:layout_width="5dp"
-                            android:layout_height="wrap_content">
-                        </Space>
-                        <TextView
-                            android:textSize="12sp"
-                            android:text="Sunrise"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                        <TextView
-                            android:id="@+id/sunrise"
-                            android:textSize="14sp"
-                            android:text="5:30am"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                    </LinearLayout>
-                    <Space
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content">
-                    </Space>
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:background="#3CF1EBF1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/img_4">
-                            <!--                            android:tint="#FFF">-->
-
-                        </ImageView>
-                        <Space
-                            android:layout_width="5dp"
-                            android:layout_height="wrap_content">
-                        </Space>
-                        <TextView
-                            android:textSize="12sp"
-                            android:text="Sunset"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                        <TextView
-                            android:id="@+id/sunset"
-                            android:textSize="14sp"
-                            android:text="5:30am"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                    </LinearLayout>
-                    <Space
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content">
-                    </Space>
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:background="#3CF1EBF1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/img_5">
-                            <!--                            android:tint="#FFF">-->
-
-                        </ImageView>
-                        <Space
-                            android:layout_width="5dp"
-                            android:layout_height="wrap_content">
-                        </Space>
-                        <TextView
-                            android:textSize="12sp"
-                            android:text="Wind"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                        <TextView
-                            android:id="@+id/wind"
-                            android:textSize="14sp"
-                            android:text="5:30am"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                    </LinearLayout>
-                    <Space
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content">
-                    </Space>
-                </LinearLayout>
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="10dp">
-                </Space>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:weightSum="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:background="#3CF1EBF1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/img_2">
-                            <!--                            android:tint="#FFF">-->
-
-                        </ImageView>
-                        <Space
-                            android:layout_width="5dp"
-                            android:layout_height="wrap_content">
-                        </Space>
-                        <TextView
-                            android:textSize="12sp"
-                            android:text="Pressure"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                        <TextView
-                            android:id="@+id/pressure"
-                            android:textSize="14sp"
-                            android:text="5:30am"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                    </LinearLayout>
-                    <Space
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content">
-                    </Space>
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:background="#3CF1EBF1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/img">
-                            <!--                            android:tint="#FFF">-->
-
-                        </ImageView>
-                        <Space
-                            android:layout_width="5dp"
-                            android:layout_height="wrap_content">
-                        </Space>
-                        <TextView
-                            android:textSize="12sp"
-                            android:text="Humidity"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                        <TextView
-                            android:id="@+id/humidity"
-                            android:textSize="14sp"
-                            android:text="5:30am"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                    </LinearLayout>
-                    <Space
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content">
-                    </Space>
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:background="#3CF1EBF1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/img_1">
-                            <!--                            android:tint="#FFF">-->
-
-                        </ImageView>
-                        <Space
-                            android:layout_width="5dp"
-                            android:layout_height="wrap_content">
-                        </Space>
-                        <TextView
-                            android:textSize="12sp"
-                            android:text="Created by"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                        <TextView
-                            android:id="@+id/info"
-                            android:textSize="14sp"
-                            android:text="Sabelo"
-                            android:textColor="@color/white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                    </LinearLayout>
-                    <Space
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content">
-                    </Space>
-                </LinearLayout>
-            </LinearLayout>
-
-
-        </RelativeLayout>
-    <ProgressBar
-        android:id="@+id/loader"
-        android:layout_centerInParent="true"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </ProgressBar>
     <TextView
-        android:id="@+id/errortext"
-        android:layout_centerInParent="true"
-        android:text="Something went wrong"
-        android:visibility="gone"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </TextView>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Ferndale"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvDate"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toEndOf="@+id/logo"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Tues 19/03/19"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tomorrowBadge" />
+
+    <TextView
+        android:id="@+id/dateTime"
+        android:layout_width="119dp"
+        android:layout_height="20dp"
+        android:gravity="end"
+        android:text="After 12:30"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvDate"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:text="Apt is in 24hrs"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#fff"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateTime" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:text="Appliance Fix\nWork in progress"
+        android:textColor="#bbb"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTime"
+        app:layout_constraintStart_toEndOf="@+id/logo"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/dotted_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime" />
+
+    <TextView
+        android:id="@+id/claim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Claim Number    003547\nJob ID
+   12345"
+        android:textColor="#FFFEFE"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/dotted_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/claim" />
+
+    <TextView
+        android:id="@+id/whatMatters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="What matters to this customer"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+    <TextView
+        android:id="@+id/whatMattersValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="0dp"
+        android:text="102 Smith Street\nJohn Smith"
+        android:textColor="#bbb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/whatMatters" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/dotted_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/whatMattersValue" />
+
+    <TextView
+        android:id="@+id/specialInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Special Instructions"
+        android:textColor="#fff"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+    <TextView
+        android:id="@+id/specialValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="Please hoot at the gate"
+        android:textColor="#bbb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/specialInstructions" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/dotted_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/specialValue" />
+
+    <TextView
+        android:id="@+id/customerDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Customer Details"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider4" />
+
+    <TextView
+        android:id="@+id/customerValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="102 Smith Street\nJohn Smith"
+        android:textColor="#bbb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customerDetails" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/dotted_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customerValue" />
+
+    <TextView
+        android:id="@+id/excessInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Excess Instructions"
+        android:textColor="#fff"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider5" />
+
+    <TextView
+        android:id="@+id/excessValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="Please collect excess as cash\nAmount Standard excess: R1250\nTotal: R1250"
+        android:textColor="#bbb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/excessInstructions" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/dotted_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/excessValue" />
+
+    <TextView
+        android:id="@+id/jobsIncident"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Jobs on this incident"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider6" />
+
+    <TextView
+        android:id="@+id/jobsValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="Appliance not working"
+        android:textColor="#bbb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/jobsIncident" />
+
+    <View
+        android:id="@+id/divider7"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/dotted_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/jobsValue" />
+
+    <Button
+        android:id="@+id/goToJobBtn"
+        android:layout_width="324dp"
+        android:layout_height="43dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@null"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Go to Job"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider7"
+        app:layout_constraintVertical_bias="0.987" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
 
